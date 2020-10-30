@@ -27,5 +27,12 @@ namespace cs_lab02_Implementacja_IEquatable_IComparable_IComparer
 
         public override string ToString() => $"({Nazwisko}, {DataZatrudnienia:d MMM yyyy}, {Wynagrodzenie} PLN)";
 
+        public Pracownik()
+        {
+            Nazwisko = "Anonim";
+            DataZatrudnienia = DateTime.Today;
+            Wynagrodzenie = 0;
+        }
+
     }
 }
