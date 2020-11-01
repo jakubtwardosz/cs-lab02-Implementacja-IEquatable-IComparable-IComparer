@@ -25,14 +25,17 @@ namespace cs_lab02_Implementacja_IEquatable_IComparable_IComparer
             set => _wyn = (value < 0)? 0: value;
         }
 
-        public override string ToString() => $"({Nazwisko}, {DataZatrudnienia:d MMM yyyy}, {Wynagrodzenie} PLN)";
-
         public Pracownik()
         {
             Nazwisko = "Anonim";
             DataZatrudnienia = DateTime.Today;
             Wynagrodzenie = 0;
         }
+
+        public override string ToString() => $"({Nazwisko}, {DataZatrudnienia:d MMM yyyy} ({CzasZatrudnienia}), {Wynagrodzenie} PLN)";
+
+        public int CzasZatrudnienia => (DateTime.Now - DataZatrudnienia).Days / 30;
+        
 
     }
 }
